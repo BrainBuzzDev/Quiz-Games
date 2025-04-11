@@ -74,8 +74,8 @@
   </div>
 
   <script>
-    const questions = [
-     general: {
+    const questions = {
+     general: [
         { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
         { question: "How many continents are there?", options: ["5", "6", "7", "8"], answer: "7" },
         { question: "Which ocean is the largest?", options: ["Atlantic", "Pacific", "Indian", "Arctic"], answer: "Pacific" }
@@ -97,12 +97,13 @@
       ]
     };
 
+    let selectedQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let timer;
     let timeLeft = 10;
 
-    function startQuiz() {
+    function showCategories() {
       document.querySelector(".start-section").style.display = "none";
       document.querySelector(".quiz-section").style.display = "block";
     }
