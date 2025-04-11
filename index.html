@@ -34,7 +34,7 @@
       border-radius: 0.5rem;
       cursor: pointer;
     }
-    .question-section, .result-section {
+    .question-section, .result-section, .quiz-section {
       display: none;
     }
     .option {
@@ -64,8 +64,9 @@
     <div class="question-section">
       <h2 id="question">Question</h2>
       <div id="options"></div>
-      <p id="timer">Time left: 15s</p>
+      <p id="timer">Time left: 10s</p>
     </div>
+    
     <div class="result-section">
       <h2 id="result-message">You scored X out of Y</h2>
       <button onclick="restartQuiz()">Try Again</button>
@@ -99,18 +100,26 @@
     let currentQuestionIndex = 0;
     let score = 0;
     let timer;
-    let timeLeft = 15;
+    let timeLeft = 10;
 
     function startQuiz() {
       document.querySelector(".start-section").style.display = "none";
+      document.querySelector(".quiz-section").style.display = "block";
+    }
+
+    function startQuiz(category) {
+      selectedQuestions = questions[category];
+      currentQuestionIndex = 0;
+      score = 0;
+      document.querySelector(".quiz-section").style.display = "none";
       document.querySelector(".question-section").style.display = "block";
       showQuestion();
     }
-
+    
     function showQuestion() {
       clearInterval(timer);
-      timeLeft = 15;
-      document.getElementById("timer").textContent = "Time left: 15s";
+      timeLeft = 10;
+      document.getElementById("timer").textContent = "Time left: 10s";
       timer = setInterval(() => {
         timeLeft--;
         document.getElementById("timer").textContent = "Time left: " + timeLeft + "s";
@@ -120,7 +129,7 @@
         }
       }, 1000);
 
-      const current = questions[currentQuestionIndex];
+      const current = selectedQuestions[currentQuestionIndex];
       document.getElementById("question").textContent = current.question;
       const optionsDiv = document.getElementById("options");
       optionsDiv.innerHTML = "";
