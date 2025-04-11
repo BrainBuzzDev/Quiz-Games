@@ -76,72 +76,52 @@
   <script>
     const questions = {
      general: [
-        { 
-          question: "What is the capital of France?",
-          options: ["Berlin", "Madrid", "Paris", "Rome"], 
-          answer: "Paris" 
-        },
-        { 
-          question: "How many continents are there?", 
-          options: ["5", "6", "7", "8"], 
-          answer: "7" 
-        },
-        { 
-          question: "Which ocean is the largest?", 
-          options: ["Atlantic", "Pacific", "Indian", "Arctic"], 
-          answer: "Pacific" 
-        }
-      ],
+      { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
+      { question: "How many continents are there?", options: ["5", "6", "7", "8"], answer: "7" },
+      { question: "Which ocean is the largest?", options: ["Atlantic", "Pacific", "Indian", "Arctic"], answer: "Pacific" },
+      { question: "Which is the largest mammal?", options: ["Elephant", "Blue Whale", "Giraffe", "Hippo"], answer: "Blue Whale" },
+      { question: "Which language has the most native speakers?", options: ["English", "Spanish", "Mandarin", "Hindi"], answer: "Mandarin" },
+      { question: "What is the tallest mountain in the world?", options: ["K2", "Everest", "Kilimanjaro", "Denali"], answer: "Everest" },
+      { question: "Who invented the telephone?", options: ["Edison", "Newton", "Bell", "Tesla"], answer: "Bell" },
+      { question: "What planet do we live on?", options: ["Mars", "Earth", "Venus", "Jupiter"], answer: "Earth" },
+      { question: "Which country hosted the 2016 Olympics?", options: ["China", "Brazil", "UK", "Russia"], answer: "Brazil" },
+      { question: "What color are emeralds?", options: ["Red", "Blue", "Green", "Yellow"], answer: "Green" }  
+    ],
       science: [
-        {
-          question: "Water boils at what temperature (°C)?", 
-          options: ["80", "90", "100", "120"], 
-          answer: "100" 
-        },
-        { 
-          question: "What gas do plants absorb?", 
-          options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-          answer: "Carbon Dioxide" 
-        },
-        {
-          question: "What planet is known as the Red Planet?",
-          options: ["Earth", "Mars", "Jupiter", "Venus"], 
-          answer: "Mars"
-        }
-      ],
+        { question: "Water boils at what temperature (°C)?", options: ["80", "90", "100", "120"], answer: "100" },
+        { question: "What gas do plants absorb?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], answer: "Carbon Dioxide" },
+        { question: "What planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], answer: "Mars" },
+        { question: "Which organ pumps blood?", options: ["Brain", "Heart", "Lungs", "Kidney"], answer: "Heart" },
+        { question: "What is H2O?", options: ["Salt", "Water", "Acid", "Oxygen"], answer: "Water" },
+        { question: "Which part of the plant conducts photosynthesis?", options: ["Root", "Leaf", "Stem", "Flower"], answer: "Leaf" },
+        { question: "Speed of light is?", options: ["300,000 km/s", "150,000 km/s", "1,000 km/s", "500 km/s"], answer: "300,000 km/s" },
+        { question: "Who discovered gravity?", options: ["Einstein", "Newton", "Bohr", "Galileo"], answer: "Newton" },
+        { question: "Which vitamin is gained from sunlight?", options: ["A", "B", "C", "D"], answer: "D" },
+        { question: "Atoms are made up of?", options: ["Cells", "Molecules", "Protons, neutrons, electrons", "Genes"], answer: "Protons, neutrons, electrons" }
+     ], 
       history: [
-        { 
-          question: "Who was the first President of the USA?",
-          options: ["Lincoln", "Jefferson", "Washington", "Adams"], 
-          answer: "Washington" 
-        },
-        {
-          question: "In which year did WWII end?", 
-          options: ["1944", "1945", "1946", "1947"], 
-          answer: "1945"
-        },
-        {
-          question: "Who discovered America?",
-          options: ["Columbus", "Magellan", "Cook", "Vasco da Gama"], 
-          answer: "Columbus"
-        }
+        { question: "Who was the first President of the USA?", options: ["Lincoln", "Jefferson", "Washington", "Adams"], answer: "Washington" },
+        { question: "In which year did WWII end?", options: ["1944", "1945", "1946", "1947"], answer: "1945" },
+        { question: "Who discovered America?", options: ["Columbus", "Magellan", "Cook", "Vasco da Gama"], answer: "Columbus" },
+        { question: "The Great Wall of China was built to protect against?", options: ["Japanese", "Mongols", "Indians", "Persians"], answer: "Mongols" },
+        { question: "Who was Cleopatra?", options: ["Queen of Rome", "Queen of Egypt", "Greek Goddess", "Queen of India"], answer: "Queen of Egypt" },
+        { question: "Mahatma Gandhi led the movement for?", options: ["British Empire", "Indian Independence", "French Revolution", "US Civil Rights"], answer: "Indian Independence" },
+        { question: "Where did the Industrial Revolution start?", options: ["USA", "Germany", "France", "UK"], answer: "UK" },
+        { question: "Who wrote the Constitution of the USA?", options: ["Jefferson", "Hamilton", "Madison", "Lincoln"], answer: "Madison" },
+        { question: "Which empire built the Colosseum?", options: ["Greek", "Egyptian", "Roman", "Persian"], answer: "Roman" },
+        { question: "Which war was fought between North and South US?", options: ["WWI", "WWII", "Cold War", "Civil War"], answer: "Civil War" }
       ],
       movies: [
-        {
-          question: "Who directed Titanic?",
-          options: ["Steven Spielberg", "James Cameron", "Nolan", "Tarantino"], 
-          answer: "James Cameron" 
-        },
-        {
-          question: "Which movie features a talking snowman named Olaf?",
-          options: ["Shrek", "Frozen", "Moana", "Zootopia"], 
-          answer: "Frozen" 
-        },
-        {
-          question: "What is the highest-grossing film of all time?", 
-          options: ["Titanic", "Endgame", "Avatar", "Star Wars"], 
-          answer: "Avatar" 
-        }
+        { question: "Who directed Titanic?", options: ["Steven Spielberg", "James Cameron", "Nolan", "Tarantino"], answer: "James Cameron" },
+        { question: "Which movie features a snowman named Olaf?", options: ["Shrek", "Frozen", "Moana", "Zootopia"], answer: "Frozen" },
+        { question: "What is the highest-grossing film ever?", options: ["Titanic", "Endgame", "Avatar", "Star Wars"], answer: "Avatar" },
+        { question: "Who played Iron Man?", options: ["Chris Evans", "Robert Downey Jr.", "Mark Ruffalo", "Chris Hemsworth"], answer: "Robert Downey Jr." },
+        { question: "Which film has the quote 'I'll be back'?", options: ["Rambo", "Matrix", "Terminator", "Die Hard"], answer: "Terminator" },
+        { question: "The movie 'Inception' is about?", options: ["Robots", "Dreams", "Aliens", "Time Travel"], answer: "Dreams" },
+        { question: "Which Disney princess has a pet tiger?", options: ["Cinderella", "Ariel", "Jasmine", "Elsa"], answer: "Jasmine" },
+        { question: "Which movie series has 'Hogwarts'?", options: ["Twilight", "Harry Potter", "LOTR", "Percy Jackson"], answer: "Harry Potter" },
+        { question: "Which actor starred in 'The Revenant'?", options: ["Tom Hardy", "Brad Pitt", "Leonardo DiCaprio", "Matt Damon"], answer: "Leonardo DiCaprio" },
+        { question: "Which movie is about blue alien people?", options: ["Avatar", "Aliens", "Matrix", "Star Trek"], answer: "Avatar" } 
       ]
     };
 
